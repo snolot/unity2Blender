@@ -1,5 +1,13 @@
 {
 	"blender":{
 		"path":"/Applications/blender-2.77a-OSX_10.6-x86_64/blender.app/Contents/MacOS/blender"
-	}
+	},
+	"modules":[
+		{
+			"name":"core/blender_api",
+			"enabled":true
+		}
+	]
+
+	
 }
