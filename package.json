@@ -1,0 +1,30 @@
+{
+  "name": "unity2Blender",
+  "version": "1.0.0",
+  "description": "realtime high quality rendering wrapper for unity using blender as render engine",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snolot/unity2Blender.git"
+  },
+  "keywords": [
+    "blender",
+    "unity",
+    "rendering",
+    "api"
+  ],
+  "author": "sylvain nolot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snolot/unity2Blender/issues"
+  },
+  "homepage": "https://github.com/snolot/unity2Blender#readme"
+}
