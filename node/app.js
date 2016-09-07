@@ -6,7 +6,11 @@ var _ 		= require('lodash');
 
 global.__base = __dirname + '/';
 
-var app 	= express();
+var app 		= express();
+var bodyParser 	= require('body-parser');
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 process.env.APP_VERSION = require('./package.json').version;
 
