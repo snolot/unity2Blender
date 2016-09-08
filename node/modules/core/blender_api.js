@@ -6,7 +6,7 @@ function executeCommand(_jsonCommand){
 	
 	var exec = require('child_process').exec;
 
-	var child = exec(config.get('blender.path') + ' ' + __base + 'public/blender/watch/watch.blend -b -P ' + __base + 'public/blender/watch/watch.py -- public/blender/watch/test '+_jsonCommand.hours+' '+_jsonCommand.minutes);
+	var child = exec(config.get('blender.path') + ' ' + __base + 'public/blender/watch/watch.blend -b -P ' + __base + 'public/blender/watch/watch.py -- public/blender/watch/test '+_jsonCommand.hours+' '+_jsonCommand.minutes+' '+_jsonCommand.cam.x);
 
 	child.stdout.on('data', function(chunk) {
 	  console.log(chunk.toString());
