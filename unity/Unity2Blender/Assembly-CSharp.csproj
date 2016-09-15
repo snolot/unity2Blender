@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Commands\BasicCommand.cs" />
      <Compile Include="Assets\Scripts\Commands\RenderCommand.cs" />
      <Compile Include="Assets\Scripts\Unity2BlenderEngine.cs" />
+     <Compile Include="Assets\Scripts\Utils\CameraProperties.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -4,15 +4,17 @@ var config	= require('config');
 
 function executeCommand(_jsonCommand){
 	
-	var str = '"hours","minutes","x","y","z","eulerX","eulerY","eulerZ"\n';
+
+	/*var str = '"hours","minutes","x","y","z","eulerX","eulerY","eulerZ"\n';
 	str  += _jsonCommand.hours+","+_jsonCommand.minutes+",";
 	str += _jsonCommand.cam.x + "," + _jsonCommand.cam.y + "," + _jsonCommand.cam.z + ",";
 	str += _jsonCommand.cam.eulerX + "," + _jsonCommand.cam.eulerY + "," + _jsonCommand.cam.eulerZ;
-
-	var csvPath = __base + 'public/blender/watch/watch.csv';
+*/
+	
+	var csvPath = __base + 'public/blender/watch/watch.json';
 	console.log(csvPath);
 
-	fs.writeFile(csvPath, str, function(err) {
+	fs.writeFile(csvPath, _jsonCommand, function(err) {
 	    if(err) {
 	        return console.log(err);
 	    }
@@ -20,7 +22,7 @@ function executeCommand(_jsonCommand){
 	    console.log("The file was saved!");
 
 	    var exec 	= require('child_process').exec;
-		var child 	= exec(config.get('blender.path') + ' ' + __base + 'public/blender/watch/watch.blend -b -P ' + __base + 'public/blender/watch/watch.py -- ' + __base + 'public/blender/watch/test '+ csvPath);
+		var child 	= exec(config.get('blender.path') + ' ' + __base + 'public/blender/watch/watchhigh.blend -b -P ' + __base + 'public/blender/watch/watch.py -- ' + __base + 'public/blender/watch/test '+ csvPath);
 
 		child.stdout.on('data', function(chunk) {
 		  console.log(chunk.toString());
@@ -40,7 +42,7 @@ module.exports = function(app){
 		console.log('/render route called.');
 		console.log(req.body);
 
-		executeCommand(req.body);
+		executeCommand(JSON.stringify(req.body));
 
 		res.send('Render route called');
 	});

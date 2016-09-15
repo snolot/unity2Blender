@@ -7,6 +7,7 @@ public class RenderCommand : BasicCommand {
 
 	public int hours;
 	public int minutes;
+	public CameraProperties cam;
 
 	public RenderCommand(int _priority){
 		name 		= "RenderCommand";
